@@ -10,13 +10,13 @@ let fn = () => {
   console.log(username.value, password.value)
   axios
     .post(
-      'https://gitee.com/oauth/token',
+      'http://localhost:5173/',
       {
         grant_type: 'password',
         username: username.value,
         password: password.value,
-        client_id: '154d4c750515aa31b8863f45108722dea107cb514be7650c4400e5726a2cfccd',
-        client_secret: '81da09a5e20e38dcad06be999cf9bb505fa9bcbb17c791d61872610142ab5f02',
+        client_id: '100f037091d43aa3c82df036e4f2c0cb827549682c20a6d52b28cb32f8596b58',
+        client_secret: 'f9956106b33b5509d13bbdfe5ba79465d9661591339ead3aa1076b6e5c43398f',
         scope: 'user_info projects pull_requests issues notes keys hook groups gists enterprises'
       },
       {
