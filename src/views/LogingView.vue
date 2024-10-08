@@ -6,17 +6,16 @@ let router = useRouter()
 let username = ref('')
 let password = ref('')
 
-let fn = () => {
-  console.log(username.value, password.value)
+let login = () => {
   axios
     .post(
-      'http://localhost:5173/',
+      'https://gitee.com/oauth/token',
       {
         grant_type: 'password',
         username: username.value,
         password: password.value,
         client_id: '100f037091d43aa3c82df036e4f2c0cb827549682c20a6d52b28cb32f8596b58',
-        client_secret: 'f9956106b33b5509d13bbdfe5ba79465d9661591339ead3aa1076b6e5c43398f',
+        client_secret: '70e2f981d058b1f624c2f1683727d71e7ff95e80a33b972a66d5e8aa97aab46a',
         scope: 'user_info projects pull_requests issues notes keys hook groups gists enterprises'
       },
       {
@@ -27,6 +26,7 @@ let fn = () => {
     )
     .then((res) => {
       console.log(res.data.access_token)
+      alert('登录失败')
       localStorage.setItem('access_token', res.data.access_token)
       router.push('/Homeview')
     })
@@ -69,7 +69,7 @@ let fn = () => {
           </label>
         </div>
       </div>
-      <button class="btn btn-wide" @click="fn">登录</button>
+      <button class="btn btn-wide" @click="login">登录</button>
       <div class="mt-3">还未注册，<span class="text-sky-400">立即注册</span></div>
     </div>
   </div>
