@@ -9,7 +9,7 @@ let password = ref('')
 let fn = () => {
   console.log(username.value, password.value)
   axios
-    .post( 
+    .post(
       'https://gitee.com/oauth/token',
       {
         grant_type: 'password',
@@ -33,8 +33,15 @@ let fn = () => {
 }
 </script>
 <template>
-  <div class="flex">
-    <img src="../imgs/appm3V1L6Y3C3podIGShCo686dXRRY4i.png" alt="" />
+  <div class="flex h-screen">
+    <div class="w-1/2">
+      <img
+        src="../imgs/appm3V1L6Y3C3podIGShCo686dXRRY4i.png"
+        alt=""
+        class="h-full w-full object-cover"
+      />
+    </div>
+
     <div class="text-center m-auto">
       <div class="text-5xl text-black mb-20 -mt-60">登录，即刻创造你的应用</div>
       <input
