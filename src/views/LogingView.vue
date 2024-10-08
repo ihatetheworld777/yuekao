@@ -42,26 +42,26 @@ let fn = () => {
       />
     </div>
 
-    <div class="text-center m-auto">
-      <div class="text-5xl text-black mb-20 -mt-60">登录，即刻创造你的应用</div>
+    <div class="flex flex-col gap-10 items-center justify-center w-1/2">
+      <div class="text-5xl text-black">登录，即刻创造你的应用</div>
       <input
         type="text"
         placeholder="用户"
         v-model="username"
-        class="input input-bordered input-info w-full max-w-xl mb-10"
+        class="input input-bordered input-info w-full max-w-xl"
       />
       <br />
       <input
         type="password"
         placeholder="密码"
         v-model="password"
-        class="mb-10 input input-bordered input-info w-full max-w-xl"
+        class="input input-bordered input-info w-full max-w-xl"
       />
       <div>
         <div class="form-control">
-          <label class="cursor-pointer label">
+          <label class="cursor-pointer label p-0 justify-start gap-2">
             <input type="checkbox" class="checkbox checkbox-info" />
-            <div class="">
+            <div class="label-text">
               我已阅读并同意<span class="text-sky-400">服务协议</span>和<span class="text-sky-400"
                 >隐私政策</span
               >

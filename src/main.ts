@@ -1,5 +1,7 @@
 import '@/assets/main.css'
 
+import { DatePicker } from 'ant-design-vue'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -12,5 +14,6 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(axios)
+app.use(DatePicker)
 
 app.mount('#app')
