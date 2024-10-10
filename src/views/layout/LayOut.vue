@@ -10,11 +10,11 @@
       </div>
     </LayoutSider>
     <Layout>
-      <LayoutHeader class="!h-[100px] !bg-slate-200">
+      <LayoutHeader class="!h-[100px] !bg-white">
         <div>
           <div
-            class="border-b border-b-gray-300 h-[40px] text-xl text-black font-semibold"
-            style="line-height: 40px"
+            class="border-b bg-white h-[60px] text-xl text-black font-semibold"
+            style="line-height: 60px"
           >
             代码仓库
           </div>
@@ -30,8 +30,8 @@
           </div>
         </div>
       </LayoutHeader>
-      <Layout style="padding: 0 24px 24px">
-        <LayoutContent class="!m-auto !mt-20">
+      <Layout>
+        <LayoutContent class="!bg-white">
           <RouterView></RouterView>
         </LayoutContent>
       </Layout>
