@@ -39,7 +39,7 @@ const loginHandle = async () => {
   console.log(err, res)
   if (!err) {
     alert('恭喜登录成功！')
-    router.replace('/HomeView')
+    router.replace('/LayOut')
   }
 }
 </script>

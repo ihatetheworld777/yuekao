@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>1233</div>
+  <div>创造</div>
 </template>
