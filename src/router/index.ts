@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LogingView from '@/views/LogingView.vue'
 import HomeView from '@/views/HomeView.vue'
 import CreateView from '@/views/CreateView.vue'
+import LayOut from '@/views/layout/LayOut.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,14 +14,21 @@ const router = createRouter({
       component: LogingView
     },
     {
-      path: '/HomeView',
-      name: 'home',
-      component: HomeView
+      path: '/LayOut',
+      name: 'layout',
+      component: LayOut
     },
     {
-      path: '/CreateView',
-      name: 'create',
-      component: CreateView
+      path: '/HomeView',
+      name: 'home',
+      component: HomeView,
+      children: [
+        {
+          path: '/CreateView',
+          name: 'create',
+          component: CreateView
+        }
+      ]
     }
   ]
 })

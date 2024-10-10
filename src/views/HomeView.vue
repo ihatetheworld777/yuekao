@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="w-1/12 flex flex-col text-xs h-3/5 justify-center items-center gap-6 border-r border-r-gray-300"
+      class="w-1/12 flex flex-col text-xs h-3/5 justify-center items-center gap-5 border-r border-r-gray-300"
     >
       <button v-for="(item, index) in data" :key="index">
         <Icon :icon="item.icon" class="size-8"></Icon>{{ item.text }}
@@ -17,13 +17,12 @@
           </div>
           <input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="全部仓库" />
           <div role="tabpanel" class="tab-content p-10"><QunBu></QunBu></div>
-
           <input type="radio" name="my_tabs_1" role="tab" class="tab" aria-label="开源仓库" />
           <div role="tabpanel" class="tab-content p-10"><KaiYuan></KaiYuan></div>
         </div>
       </div>
       <div class="fixed top-7 right-0">
-        <button class="btn btn-active btn-neutral" @click="fn1">创建仓库</button>
+        <button class="btn btn-active btn-neutral" @click="create">创建仓库</button>
       </div>
     </div>
   </div>
@@ -39,22 +38,24 @@ interface NavItem {
   text: string
 }
 const data: NavItem[] = [
-  { icon: 'lets-icons:date-fill', text: '工作台' },
-  { icon: 'material-symbols:radio', text: '项目' },
-  { icon: 'mdi:book-music', text: 'Al' },
-  { icon: 'ph:ranking-fill', text: '代码' },
-  { icon: 'fluent:book-pulse-20-filled', text: '制品' },
-  { icon: 'ph:ranking-fill', text: '洞察' },
-  { icon: 'ph:ranking-fill', text: '知识' },
-  { icon: 'ph:ranking-fill', text: '自动化' },
-  { icon: 'ph:ranking-fill', text: '自动化' },
-  { icon: 'ph:ranking-fill', text: '自动化' },
-  { icon: 'ph:ranking-fill', text: '自动化' },
-  { icon: 'ph:ranking-fill', text: '自动化' },
-  { icon: 'ph:ranking-fill', text: '自动化' }
+  { icon: 'icon-park-outline:workbench', text: '工作台' },
+  { icon: 'ph:cardholder-duotone', text: '项目' },
+  { icon: 'ph:open-ai-logo-thin', text: 'Al' },
+  { icon: 'ph:notepad', text: '事项' },
+  { icon: 'ph:code-fill', text: '代码' },
+  { icon: 'humbleicons:box', text: '制品' },
+  { icon: 'fluent-mdl2:insights', text: '洞察' },
+  { icon: 'ph:book-open-text-bold', text: '知识' },
+  { icon: 'carbon:ibm-cloud-pak-business-automation', text: '自动化' },
+  { icon: 'ic:outline-group', text: '' },
+  { icon: 'hugeicons:more-03', text: '' },
+  { icon: 'mdi:bell', text: '' },
+  { icon: 'ri:settings-line', text: '' },
+  { icon: 'fe:question', text: '' },
+  { icon: 'mingcute:user-4-fill', text: '' }
 ]
 let router = useRouter()
-let fn1 = () => {
-  router.push('/CreateView')
+let create = () => {
+  router.replace('/CreateView')
 }
 </script>
