@@ -119,7 +119,7 @@ console.log(HomeName.value)
                     placeholder="仓库名称支持字母，数字，下划线(_)和点(.)的组合"
                     :maxlength="100"
                     show-count
-                    v-model="HomeName"
+                    v-model:value="HomeName"
                   />
                 </input-group>
               </div>
@@ -131,7 +131,7 @@ console.log(HomeName.value)
                   placeholder="请描述仓库内容"
                   allow-clear
                   class="!h-28"
-                  v-model="description"
+                  v-model:value="description"
                 />
               </div>
             </div>
@@ -141,7 +141,7 @@ console.log(HomeName.value)
                 <div><Checkbox>生成README文件</Checkbox></div>
                 <div><Checkbox>添加.gitignore文件</Checkbox></div>
                 <div>
-                  <Checkbox :disabled="false"
+                  <Checkbox disabled="false"
                     >添加分支模型(仓库创建后将根据所选模型创建分支)</Checkbox
                   >
                 </div>

@@ -9,15 +9,15 @@ let router = useRouter()
 let username = ref('3224533545@qq.com')
 let password = ref('Hxy9515.')
 
-interface DataImg {
-  img: string
-}
+// interface DataImg {
+//   img: string
+// }
 
-let imags: DataImg[] = [
-  { img: '/public/imgs/02.jpg' },
-  { img: '/public/imgs/02.jpg' },
-  { img: '/public/imgs/02.jpg' }
-]
+// let imags: DataImg[] = [
+//   { img: '/public/imgs/02.jpg' },
+//   { img: '/public/imgs/02.jpg' },
+//   { img: '/public/imgs/02.jpg' }
+// ]
 interface DataLogin {
   grant_type: string
   username: string
@@ -46,9 +46,12 @@ const loginHandle = async () => {
 <template>
   <div class="flex h-screen">
     <Carousel autoplay class="w-1/2">
-      <div v-for="(item, index) in imags" :key="index">
+      <!-- <div v-for="(item, index) in imags" :key="index">
         <img :src="item.img" alt="" class="w-full object-cover h-screen" />
-      </div>
+      </div> -->
+      <img src="/public/imgs/02.jpg" alt="" />
+      <img src="/public/imgs/03.jpg" alt="" />
+      <img src="/public/imgs/04.jpg" alt="" />
     </Carousel>
     <div class="flex flex-col gap-10 items-center justify-center w-1/2">
       <h1 class="text-4xl text-black">登录，即刻创造你的应用</h1>
