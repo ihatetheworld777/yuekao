@@ -23,7 +23,9 @@
             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 gap-4">
               <li><a>Sidebar Item 1</a></li>
               <li v-for="(item, index) in userdata" :key="index">
-                <a><Icon :icon="item.icon" class="size-6"></Icon>{{ item.text }}</a>
+                <button @click="fn5(index)">
+                  <Icon :icon="item.icon" class="size-6"></Icon>{{ item.text }}
+                </button>
               </li>
               <li>
                 <a class="flex justify-between">
@@ -74,10 +76,13 @@ const userdata: NavItem[] = [
   { icon: 'tdesign:user-add', text: '邀请成员', hs: '' },
   { icon: 'el:list-alt', text: '工单中心', hs: '' },
   { icon: 'fluent-mdl2:date-time-12', text: '更新日志', hs: '' },
-  { icon: 'radix-icons:exit', text: '退出', hs: '' }
+  { icon: 'radix-icons:exit', text: '退出', hs: '/' }
 ]
 let router = useRouter()
 let fn4 = (index: number) => {
   router.replace(data[index].hs)
+}
+let fn5 = (index: number) => {
+  router.replace(userdata[index].hs)
 }
 </script>

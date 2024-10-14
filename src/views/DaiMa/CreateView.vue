@@ -21,7 +21,7 @@ import { getCreateRepos } from '@/service/api'
 import to from 'await-to-js'
 let router = useRouter()
 let back = () => {
-  router.replace('/LayOut')
+  router.replace('/DaiMa')
 }
 let num = ref('')
 
@@ -46,6 +46,7 @@ const CreateHome = async () => {
   console.log(err, res)
   if (!err) {
     alert('恭喜创建成功！')
+    router.replace('/QuanBu')
   }
 }
 console.log(HomeName.value)
@@ -112,7 +113,6 @@ console.log(HomeName.value)
                         >
                       </div>
                     </select-option>
-                    <select-option value="Option2">Option2</select-option>
                   </Select>
                   <Input
                     style="font-size: 12px"
