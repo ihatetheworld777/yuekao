@@ -141,7 +141,7 @@ console.log(HomeName.value)
                 <div><Checkbox>生成README文件</Checkbox></div>
                 <div><Checkbox>添加.gitignore文件</Checkbox></div>
                 <div>
-                  <Checkbox disabled="false"
+                  <Checkbox disabled: false="false"
                     >添加分支模型(仓库创建后将根据所选模型创建分支)</Checkbox
                   >
                 </div>

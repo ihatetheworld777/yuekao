@@ -5,6 +5,14 @@ import { onMounted } from 'vue'
 import { getReposView } from '@/service/api'
 import to from 'await-to-js'
 import { ref } from 'vue'
+// interface Item {
+//   full_name: string
+//   name: string
+//   rela: string
+//   updated_at: string
+//   url: string
+// }
+
 let HomeData = ref([])
 
 onMounted(async () => {
@@ -15,16 +23,13 @@ onMounted(async () => {
   console.log(err, res)
   HomeData.value = res?.data
   console.log(HomeData.value)
-  console.log(res?.data)
 })
 
-// import { useRouter } from 'vue-router'
-// import { getReposView } from '@/service/api'
-// import to from 'await-to-js'
-// let router = useRouter()
-// let createtwo = () => {
-//   router.replace('/CreateView')
-// }
+import { useRouter } from 'vue-router'
+let router = useRouter()
+let createtwo = () => {
+  router.replace('/CreateView')
+}
 </script>
 <template>
   <div class="space-y-6 mt-6" v-if="HomeData.length">
@@ -89,7 +94,7 @@ onMounted(async () => {
         class="flex justify-between mr-20 border-b border-solid"
       >
         <div class="flex gap-60 ml-12">
-          <div>{{ full_name }}</div>
+          <div>{{ item.full_name }}</div>
           <div>{{ item.name }}</div>
           <div>{{ item.rela }}</div>
         </div>
