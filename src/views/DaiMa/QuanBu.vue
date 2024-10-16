@@ -5,15 +5,17 @@ import { onMounted } from 'vue'
 import { getReposView } from '@/service/api'
 import to from 'await-to-js'
 import { ref } from 'vue'
-// interface Item {
-//   full_name: string
-//   name: string
-//   rela: string
-//   updated_at: string
-//   url: string
-// }
+interface Item {
+  length: number
+  value: any
+  full_name?: string
+  name?: string
+  rela?: string
+  updated_at?: string
+  url?: string
+}
 
-let HomeData = ref([])
+let HomeData = ref<Item[]>([])
 
 onMounted(async () => {
   const reposData = {
@@ -22,7 +24,7 @@ onMounted(async () => {
   const [err, res] = await to(getReposView(reposData))
   console.log(err, res)
   HomeData.value = res?.data
-  console.log(HomeData.value)
+  // console.log(HomeData.value)
 })
 
 import { useRouter } from 'vue-router'
